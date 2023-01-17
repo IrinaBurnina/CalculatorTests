@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 public class CalculatorTests {
     @BeforeAll
     public static void beforeAll() {
-        System.out.println("Calculator tests are completed.");
+        System.out.println("Calculator tests are started.");
     }
 
     @AfterAll
@@ -28,42 +28,79 @@ public class CalculatorTests {
         System.out.println("Test is completed.");
     }
 
-    @org.junit.jupiter.api.Test
-    public void calculatorApplyTest() {
+    @Test
+    public void calculatorMinusTest() {
         //arrange
         int a = 2;
         int b = 1;
         int c = 1;
-        int d = 2;
-        int e = 2;
-        int f = 3;
         //act
         int result = calculator.minus.apply(a, b);
-        int result2 = calculator.multiply.apply(a, b);
-        int result3 = calculator.divide.apply(a, b);
-        int result4 = calculator.plus.apply(a, b);
         //assert
         Assertions.assertEquals(c, result);
-        Assertions.assertEquals(d, result2);
-        Assertions.assertEquals(e, result3);
-        Assertions.assertEquals(f, result4);
     }
 
-    @org.junit.jupiter.api.Test
-    public void calculatorOperatorTest() {
+    @Test
+    public void calculatorMultiplyTest() {
+        //arrange
+        int a = 2;
+        int b = 1;
+        int c = 2;
+        //act
+        int result = calculator.multiply.apply(a, b);
+        //assert
+        Assertions.assertEquals(c, result);
+    }
+
+    @Test
+    public void calculatorDivideTest() {
+        //arrange
+        int a = 2;
+        int b = 1;
+        int c = 2;
+        //act
+        int result = calculator.divide.apply(a, b);
+        //assert
+        Assertions.assertEquals(c, result);
+    }
+
+    @Test
+    public void calculatorPlusTest() {
+        //arrange
+        int a = 2;
+        int b = 1;
+        int c = 3;
+        //act
+        int result = calculator.plus.apply(a, b);
+        //assert
+        Assertions.assertEquals(c, result);
+    }
+
+    @Test
+    public void calculatorAbsTest() {
         //arrange
         int a = -2;
         int b = 2;
-        int c = 4;
         //act
         int result = calculator.abs.operator(a);
-        int result2 = calculator.pow.operator(a);
         //assert
         Assertions.assertEquals(b, result);
-        Assertions.assertEquals(c, result2);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
+    public void calculatorPowTest() {
+        //arrange
+        int a = -2;
+        int b = 4;
+        //act
+
+        int result = calculator.pow.operator(a);
+        //assert
+
+        Assertions.assertEquals(b, result);
+    }
+
+    @Test
     public void calculatorIsPositiveTest() {
         //arrange
         int a = -2;
